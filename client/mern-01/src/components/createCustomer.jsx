@@ -20,7 +20,7 @@ const options = [
         value: "40 Mbps",
     },
 ];
-export default function CreateCustomer() {
+const CreateCustomer = () => {
     const paperStyle = { padding: '30px 20px', height: '500px', width: '500px', margin: "20px auto" }
     const headerStyle = { margin: 0, fontWeight:"800" }
     const marginTop = { marginTop: 15 }
@@ -67,3 +67,5 @@ export default function CreateCustomer() {
         </Grid>
     )
 }
+
+export default CreateCustomer;
