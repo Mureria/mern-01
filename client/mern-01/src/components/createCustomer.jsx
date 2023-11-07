@@ -49,14 +49,14 @@ const CreateCustomer = () => {
                 <form>
                     <TextField style={marginTop} id="name" value={customer.name} onChange={(e) => setCustomer({...customer, name: e.target.value })}
                         fullWidth label='Name' placeholder="Enter your name" />
-                    <TextField style={marginTop} id="email" value={customer.email} onChange={(e) => setCustomer({ ...customer,email: e.target.value })}
+                    <TextField style={marginTop} id="email" value={customer.email} onChange={(e) => setCustomer({ ...customer, email: e.target.value })}
                         fullWidth label='Email' placeholder="Enter your email" />
-                    <TextField style={marginTop} id="phoneNumber" value={customer.phoneNumber} onChange={(e) => setCustomer({ ...customer,phoneNumber: e.target.value })}
+                    <TextField style={marginTop} id="phoneNumber" value={customer.phoneNumber} onChange={(e) => setCustomer({ ...customer, phoneNumber: e.target.value })}
                         fullWidth label='Phone Number' placeholder="Enter your phone number" />
-                    <TextField style={marginTop} id="location" value={customer.location} onChange={(e) => setCustomer({...customer,location: e.target.value })}
+                    <TextField style={marginTop} id="location" value={customer.location} onChange={(e) => setCustomer({...customer, location: e.target.value })}
                         fullWidth label='Location' placeholder="Apartment,City" />
                     
-                    <Select style={marginTop} id="subscription" value={customer.subscribedToPackage} onChange={(e) => setCustomer({ ...customer,subscribedToPackage: e.target.value })}
+                    <Select style={marginTop} id="subscription" value={customer.subscribedToPackage} onChange={(e) => setCustomer({ ...customer, subscribedToPackage: e.target.value })}
                         
                         fullWidth label="Subscription" placeholder="Subscription" >
                             {options.map((option) => (
