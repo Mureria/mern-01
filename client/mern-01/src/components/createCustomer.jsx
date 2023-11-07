@@ -56,10 +56,13 @@ const CreateCustomer = () => {
                     <TextField style={marginTop} id="location" value={customer.location} onChange={(e) => setCustomer({...customer,location: e.target.value })}
                         fullWidth label='Location' placeholder="Apartment,City" />
                     
-                    <Select style={marginTop} id="subscription" value={customer.subscribedToPackage} onChange={(e) => setCustomer({ ...customer,subscribedToPackage: e.target.value })} fullWidth label="Subscription" placeholder="Subscription" >
-                      {options.map((option) => (
-                      <FormControlLabel  control={<Checkbox />} value={option.value}> {option.label} </FormControlLabel>
-                      ))}; 
+                    <Select style={marginTop} id="subscription" value={customer.subscribedToPackage} onChange={(e) => setCustomer({ ...customer,subscribedToPackage: e.target.value })}
+                        
+                        fullWidth label="Subscription" placeholder="Subscription" >
+                            {options.map((option) => (
+                                <option value={option.value}>{option.label}</option>
+                            ))}
+                      
                     </Select>
                     <Button type='submit' variant='contained' color='primary' style={marginTop} onClick={createCustomer}>Submit</Button>
                 </form>

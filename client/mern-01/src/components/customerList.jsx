@@ -54,7 +54,7 @@ const CustomerList = () => {
                                 <TableCell align="center">{customer.email}</TableCell>
                                 <TableCell align="center">{customer.phoneNumber}</TableCell>
                                 <TableCell align="center">{customer.location}</TableCell>
-                                <TableCell align="center">{customer.subscribedToPackage}</TableCell>
+                                <TextField style={marginTop} id="subscribedToPackage" value={customer.subscribedToPackage} onChange={(e) => showCustomer({ ...customer, subscribedToPackage: e.target.value })} fullWidth label='Subscribed Package' />
                                 <TableCell align="center" style={{ color: "blue", cursor: "pointer" }} component={Link} to={`/edit/${customer._id}`} > Edit</TableCell>
                                 <TableCell align="center" style={{ color: "blue", cursor: "pointer" }} onClick={() => deleteCustomer(customer._id)} > Delete</TableCell>  
                             </TableRow>
