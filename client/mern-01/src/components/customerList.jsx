@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@mui/material';
+import {Table,TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
 import { Link } from 'react-router-dom'
 
 
 const CustomerList = () => {
-
     const [customerList, showCustomerList] = useState([]);
     const deleteCustomer = (id) => {
         axios.delete(`http://localhost:5000/customer/${id}`).then(() => {
@@ -56,7 +55,8 @@ const CustomerList = () => {
                                 <TableCell align="center">{customer.location}</TableCell>
                                 <TableCell align="center">{customer.subscribedToPackage}</TableCell>
                                 <TableCell align="center" style={{ color: "blue", cursor: "pointer" }} component={Link} to={`/edit/${customer._id}`} > Edit</TableCell>
-                                <TableCell align="center" style={{ color: "blue", cursor: "pointer" }} onClick={() => deleteCustomer(customer._id)} > Delete</TableCell>  
+                                <TableCell align="center" style={{ color: "blue", cursor: "pointer" }} onClick={() => deleteCustomer(customer._id)} > Delete</TableCell>
+                                
                             </TableRow>
                         ))}
                     </TableBody>
