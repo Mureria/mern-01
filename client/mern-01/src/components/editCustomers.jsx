@@ -4,21 +4,20 @@ import axios from "axios";
 import { useParams } from 'react-router-dom';
 
  const EditCustomer = () => {
+    const [customer, showCustomer] = useState([]);
     const paperStyle = { padding: '30px 20px', height: '500px', width: '500px', margin: "20px auto" }
     const headerStyle = { margin: 0, fontWeight: "800" }
     const marginTop = { marginTop: 15 }
-    const [customer, showCustomer] = useState([]);
     const { id } = useParams();
 
     useEffect(() => {
         axios.get(`http://localhost:5000/customer/${id}`).then((customer) => {
             showCustomer(customer.data);
-
         })
-    })
+    }, []);
 
     const updateCustomer = () => {
-        axios.patch((`http://localhost:5000/customer/${id}`), customer).then((customer) => {
+        axios.put((`http://localhost:5000/customer/${id}`), customer).then((customer) => {
             showCustomer(customer.data)
             window.alert('Successfully Edited')            
         })
